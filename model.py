@@ -76,9 +76,9 @@ def _preprocess_data(data):
 
     # ----------- Replace this code with your own preprocessing steps --------
     
-    df_riders = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/riders.csv', index_col=0)
-    df_train = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/train_data.csv', index_col=0)
-    df_test = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/test_data.csv', index_col=0)
+    df_riders = pd.read_csv('/home/explore-student/regression-predict-api-template/utils/data/riders.csv', index_col=0)
+    df_train = pd.read_csv('/home/explore-student/regression-predict-api-template/utils/data/train_data.csv', index_col=0)
+    df_test = pd.read_csv('/home/explore-student/regression-predict-api-template/utils/data/test_data.csv', index_col=0)
 
     df = pd.merge(left=df_train, right=df_riders, how='left',
                       left_on='Rider Id', right_on='Rider Id').set_index(df_train.index)
