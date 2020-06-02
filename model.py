@@ -64,7 +64,7 @@ def _preprocess_data(data):
     # Convert the json string to a python dictionary object
     feature_vector_dict = json.loads(data)
     # Load the dictionary as a Pandas DataFrame.
-    df_test = pd.DataFrame.from_dict([feature_vector_dict])
+    feature_vector_df = pd.DataFrame.from_dict([feature_vector_dict])
 
     # ---------------------------------------------------------------
     # NOTE: You will need to swap the lines below for your own data
@@ -78,7 +78,7 @@ def _preprocess_data(data):
     
     df_riders = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/riders.csv', index_col=0)
     df_train = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/train_data.csv', index_col=0)
-    #df_test = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/test_data.csv', index_col=0)
+    df_test = pd.read_csv('/Users/Vahiel/regression-predict-api-template/utils/data/test_data.csv', index_col=0)
 
     df = pd.merge(left=df_train, right=df_riders, how='left',
                       left_on='Rider Id', right_on='Rider Id').set_index(df_train.index)
